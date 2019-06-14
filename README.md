@@ -9,8 +9,8 @@ Author: Rainer M. Krug
 -----
 
 The presentation and it’s source is in the directory
-[docs](https://github.com/rkrug/MetadataIsSexy/tree/master/docs)
+[docs](https://github.com/rkrug/metadata_is_sexy/tree/master/docs)
 
 To view the presentation online, go to [the
-presentation](https://rkrug.github.io/MetadataIsSexy/MetadataIsSexy.html)
+presentation](https://rkrug.github.io/metadata_is_sexy/metadata_is_sexy.html)
 via this link.
