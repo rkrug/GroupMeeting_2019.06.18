@@ -13,7 +13,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
-class: center, middle
+class: center, middle, inverse
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -25,66 +25,24 @@ options(htmltools.dir.version = FALSE)
   position: absolute;
   bottom: 0;
   left: 0;
-  content:url(https://zenodo.org/badge/DOI/10.5281/zenodo.2244999.svg);
+  content:url();
   height:60px;
 }
 
-.left-code {
-  color: #777;
-  width: 38%;
-  height: 92%;
-  float: left;
-}
-.right-plot {
-  width: 60%;
-  float: right;
-  padding-left: 1%;
-}
-.plot-callout {
-  height: 225px;
-  width: 450px;
-  bottom: 5%;
-  right: 5%;
-  position: absolute;
-  padding: 0px;
-  z-index: 100;
-}
-.plot-callout img {
-  width: 100%;
-  border: 4px solid #23373B;
-}
-.middle-text {
-  color: #777;
-  width: 30%;
-  height: 100%;
-  float: middle;
-}
-.left-text {
-  color: #777;
-  width: 30%;
-  height: 100%;
-  float: left;
-}
-.right-text {
-  color: #777;
-  width: 30%;
-  height: 100%;
-  float: right;
-}
 
-.scroll {
-  background: #FFBB33;
-  width: 100%;
-  height: 80%;
-  overflow-x: scroll;
-  overflow-y: scroll;
-  padding-right: 1px;
-  padding-bottom: 1px;
+
+.alert {
+  color: #FF0000;
+  text-align: center;
+  font-size: xx-large;
+  float: middle;
 }
 
 .dt {
-  font-size: 11px;
-}
+  font-size: x-small;
+  float: left;
+  bottom: 0;
+}]
 
 ```
 
@@ -93,12 +51,13 @@ options(htmltools.dir.version = FALSE)
 
 ---
 layout: true
-class: animated, fadeIn
+class: inverse, animated, fadeIn
 ---
-class: center, middle
+class: center, middle, inverse
 
-<img src="http://www.icanbarelydraw.com/comic/wp-content/uploads/2013/06/metadata-1200dpi.png" style="width: 100%" />
+<img src="./fig/metadata-1200dpi.png" style="width: 100%" />
 
+.dt[ [icanbareleydraw](http://www.icanbarelydraw.com/comic/wp-content/uploads/2013/06/metadata-1200dpi.png) ]
 ---
 class: center, middle
 
@@ -106,64 +65,83 @@ class: center, middle
 ---
 class: center, middle
 
-<img src="http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg" style="width: 100%" />
+<img src="./fig/5141328136_16d8f73ee7_b.jpg" style="width: 100%" />
+
+.dt[ [randylane](http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg) ]
 
 ---
 class: center, middle
 
-<img src="https://media.istockphoto.com/photos/woman-scientist-screaming-picture-id616093188?k=6&m=616093188&s=612x612&w=0&h=1nrZy_8hdnd0BxG1_q60kBbFYmCrrPkyDe_LvKurKjU=" style="width: 100%" />
----
-class: center, middle
+<img src="./fig/istockphoto-616093188-612x612.jpg" style="width: 100%" />
 
-<img src="https://i.ytimg.com/vi/YsUyzkjOY_c/maxresdefault.jpg" style="width: 100%" />
----
-class: center, middle
-Change to MetaData in your mind
-
-<img src="http://nomorewallstreet.com/wp-content/uploads/2014/10/taxes.jpg" style="width: 85%" />
+.dt[ [istockphoto](https://media.istockphoto.com/photos/woman-scientist-screaming-picture-id616093188?k=6&m=616093188&s=612x612&w=0&h=1nrZy_8hdnd0BxG1_q60kBbFYmCrrPkyDe_LvKurKjU=) ]
 
 ---
 class: center, middle
 
-<img src="https://cdn.gobankingrates.com/wp-content/uploads/2017/09/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg" style="width: 100%" />
+<img src="./fig/maxresdefault.jpg" style="width: 100%" />
+
+.dt[ [https://i.ytimg.com/vi/YsUyzkjOY_c/maxresdefault.jpg](https://i.ytimg.com/vi/YsUyzkjOY_c/maxresdefault.jpg) ]
 
 ---
 class: center, middle
 Change to MetaData in your mind
 
-<img src="http://assets.nerdwallet.com/blog/wp-content/uploads/2015/10/8-student-faqs-about-taxes.jpg" style="width: 80%" />
+<img src="./fig/taxes.jpg" style="width: 70%" />
 
-
----
-class: center, middle, inverse
-
-<img src="https://ogsl.ca/sites/default/files/FAIR_EN.png" style="width: 80%" />
+.dt[ [nomorewallstreet](http://nomorewallstreet.com/wp-content/uploads/2014/10/taxes.jpg)]
 
 ---
-class: center, middle, inverse
+class: center, middle
 
-<img src="https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg" style="width: 100%" />
+<img src="./fig/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg" style="width: 100%" />
+
+.dt[ [gobankingrates](https://cdn.gobankingrates.com/wp-content/uploads/2017/09/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg) ]
 
 ---
-class: inverse
+class: center, middle
+
+Change to MetaData in your mind
+
+<img src="./fig/8-student-faqs-about-taxes.jpg" style="width: 100%" />
+
+.dt[ [nerdwallet](http://assets.nerdwallet.com/blog/wp-content/uploads/2015/10/8-student-faqs-about-taxes.jpg)  ]
+
+---
+class: center, middle
+
+<img src="./fig/FAIR_EN.png" style="width: 70%" />
+
+.dt[ [ogsl](https://ogsl.ca/sites/default/files/FAIR_EN.png)  ]
+
+---
+class: center, middle
+
+<img src="./fig/happy-scientists.jpg" style="width: 100%" />
+
+.dt[ [edgefoscholars](https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg)  ]
+---
 
 # Metadata is complex and divers
 
-<img src="http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg" style="width: 100%" />
+<img src="./fig/5141328136_16d8f73ee7_b.jpg" style="width: 90%" />
+
+.dt[ [randylane](http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg)]
 
 ---
-class: inverse
 
 # Metadata is complex and divers
  ==> Metadata Schemes bring structure
 
 --
 
-<img src="http://docs.oasis-open.org/election/eml/v5.0/cs01/EML-Schema-Descriptions-v5.0_files/image028.gif" style="width: 40%" />
+<img src="./fig/image028.gif" style="width: 35%" />
 
 --
 
 ==> Metadata Schemes are complex
+
+.dt[ [oasis-open](http://docs.oasis-open.org/election/eml/v5.0/cs01/EML-Schema-Descriptions-v5.0_files/image028.gif)]
 
 ---
 class: inverse
@@ -187,14 +165,17 @@ Poisot, T., Bruneau, A., Gonzalez, A., Gravel, D., Peres-Neto, P., 2019. Ecologi
 ---
 class: inverse
 
-<img src="https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg" style="width: 100%" />
+<img src="./fig/happy-scientists.jpg" style="width: 100%" />
 
+.dt[ [odgeforscholars](https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg)
 ---
 class: inverse
 
 # Entering Metadata
 
-<img src="https://cdn.gobankingrates.com/wp-content/uploads/2017/09/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg" style="width: 100%" />
+<img src="./fig/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg" style="width: 100%" />
+
+.dt[ [gobankingrates](https://cdn.gobankingrates.com/wp-content/uploads/2017/09/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg)]
 
 ---
 class: inverse
@@ -213,10 +194,9 @@ class: inverse
 
 --
 
-<img src="http://museums.ucdavis.edu/documentation/BohartDocumentTalk_files/image012.jpg" style="width: 100%" />
+<img src="./fig/dmdScheme_xml.png" style="width: 100%" />
 
 ---
-class: inverse
 
 # Introducing: R package dmdScheme
 
@@ -229,14 +209,13 @@ Entering Metadata in spreadsheet
 <img src="./fig/emeScheme_Experiment.png" style="width: 100%" />
 
 ---
-class: inverse
+
 # Introducing: R package dmdScheme
 Entering Metadata in spreadsheet
 
 <img src="./fig/emeScheme_Species.png" style="width: 100%" />
 
 ---
-class: inverse
 
 # Introducing: R package dmdScheme
 
@@ -255,17 +234,15 @@ validate_report("SPREADSHEET.xlsx")
 <img src="./fig/dmdScheme_validation.png" style="width: 100%" />
 
 ---
-class: inverse
 
 # Introducing: R package dmdScheme
 Validate Spreadsheet
 ```{r eval=FALSE}
 validate_report("SPREADSHEET.xlsx")
 ```
-<img src="./fig/dmdScheme_validation_details.png" style="width: 100%" />
+<img src="./fig/dmdScheme_validation_details.png" style="width= 100%" />
 
 ---
-class: inverse
 
 # Introducing: R package dmdScheme
 
@@ -287,7 +264,7 @@ dmdScheme_to_xml(
 <img src="./fig/dmdScheme_xml.png" style="width: 100%" />
 
 ---
-class: center, middle, inverse 
+class: center, middle 
 
 <img src="https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg" style="width: 100%" />
 
@@ -307,8 +284,20 @@ class: inverse
 - dmdSchemes are subsets of other schemes ([Darwin Core](http://rs.tdwg.org/dwc/), [Ecological Metadata Language ](https://knb.ecoinformatics.org/external/emlparser/docs/eml-2.1.1/index.html))
 
 --
+
 # Ontologies
-- You don't want to go there right now! Promise!
+
+--
+
+.alert[ You don't want to go there! ]
+
+--
+
+.alert[ Not now! ]
+
+--
+
+.alert[ Trust me! ]
 
 --
 # Simply linking Metadata Properties
