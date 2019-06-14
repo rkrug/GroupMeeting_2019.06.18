@@ -1,5 +1,5 @@
 ---
-title: "MetaData are like Taxes!"
+title: "MetaData is sexy!"
 subtitle: "⚔<br/> "
 author: "Rainer M Krug"
 institute: "University Zurich, IEEU"
@@ -7,618 +7,310 @@ date: "18.06.2019 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
+    css: [default, default-fonts, animate.css]
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
 ---
-
-background-image: url(https://imgs.xkcd.com/comics/standards.png)
+class: center, middle
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
+```{css, echo=FALSE}
+/* custom.css */
 
-???
+.title-slide.remark-slide-content:before{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content:url(https://zenodo.org/badge/DOI/10.5281/zenodo.2244999.svg);
+  height:60px;
+}
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+.plot-callout {
+  height: 225px;
+  width: 450px;
+  bottom: 5%;
+  right: 5%;
+  position: absolute;
+  padding: 0px;
+  z-index: 100;
+}
+.plot-callout img {
+  width: 100%;
+  border: 4px solid #23373B;
+}
+.middle-text {
+  color: #777;
+  width: 30%;
+  height: 100%;
+  float: middle;
+}
+.left-text {
+  color: #777;
+  width: 30%;
+  height: 100%;
+  float: left;
+}
+.right-text {
+  color: #777;
+  width: 30%;
+  height: 100%;
+  float: right;
+}
+
+.scroll {
+  background: #FFBB33;
+  width: 100%;
+  height: 80%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  padding-right: 1px;
+  padding-bottom: 1px;
+}
+
+.dt {
+  font-size: 11px;
+}
+
+```
+
+
+# MetaData
+
+---
+layout: true
+class: animated, fadeIn
+---
+class: center, middle
+
+<img src="http://www.icanbarelydraw.com/comic/wp-content/uploads/2013/06/metadata-1200dpi.png" style="width: 100%" />
 
 ---
 class: center, middle
 
-# xaringan
+# Data about Data
+---
+class: center, middle
 
-### /ʃaː.'riŋ.ɡan/
+<img src="http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg" style="width: 100%" />
 
 ---
-class: inverse, center, middle
+class: center, middle
 
-# Get Started
+<img src="https://media.istockphoto.com/photos/woman-scientist-screaming-picture-id616093188?k=6&m=616093188&s=612x612&w=0&h=1nrZy_8hdnd0BxG1_q60kBbFYmCrrPkyDe_LvKurKjU=" style="width: 100%" />
+---
+class: center, middle
+
+<img src="https://i.ytimg.com/vi/YsUyzkjOY_c/maxresdefault.jpg" style="width: 100%" />
+---
+class: center, middle
+Change to MetaData in your mind
+
+<img src="http://nomorewallstreet.com/wp-content/uploads/2014/10/taxes.jpg" style="width: 85%" />
 
 ---
+class: center, middle
+
+<img src="https://cdn.gobankingrates.com/wp-content/uploads/2017/09/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg" style="width: 100%" />
+
+---
+class: center, middle
+Change to MetaData in your mind
+
+<img src="http://assets.nerdwallet.com/blog/wp-content/uploads/2015/10/8-student-faqs-about-taxes.jpg" style="width: 80%" />
 
 
+---
+class: center, middle, inverse
 
-# Taxes
+<img src="https://ogsl.ca/sites/default/files/FAIR_EN.png" style="width: 80%" />
 
-http://nomorewallstreet.com/wp-content/uploads/2014/10/taxes.jpg
+---
+class: center, middle, inverse
 
-https://cdn.gobankingrates.com/wp-content/uploads/2017/09/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg
+<img src="https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg" style="width: 100%" />
 
-http://assets.nerdwallet.com/blog/wp-content/uploads/2015/10/8-student-faqs-about-taxes.jpg
+---
+class: inverse
 
-# Metadata
+# Metadata is complex and divers
 
-https://www.epos-ip.org/sites/default/files/EPOS_metadata_form_and_simplified_cerif_diagram.jpeg
+<img src="http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg" style="width: 100%" />
 
+---
+class: inverse
 
-http://www.icanbarelydraw.com/comic/wp-content/uploads/2013/06/metadata-1200dpi.png
-
-https://xkcd.com/927/  https://imgs.xkcd.com/comics/standards.png
+# Metadata is complex and divers
+ ==> Metadata Schemes bring structure
 
 --
 
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
+<img src="http://docs.oasis-open.org/election/eml/v5.0/cs01/EML-Schema-Descriptions-v5.0_files/image028.gif" style="width: 40%" />
 
 --
 
-- Click the `Knit` button to compile it;
+==> Metadata Schemes are complex
+
+---
+class: inverse
+
+# Introducing: Domain Specific Metadata Schemes (dmdScheme)
 
 --
 
-- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)<sup>2</sup> "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
+- Specific for requirements of domain
 
-.footnote[
-[1] 中文用户请看[这份教程](http://slides.yihui.name/xaringan/zh-CN.html)
+--
 
-[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
-]
+- Buy-in from scientists through **participation in development of the dmdScheme**
 
----
-background-image: url(`r xaringan:::karl`)
-background-position: 50% 50%
-class: center, bottom, inverse
+--
 
-# You only live once!
+- Poisot et al., 2019: Metadata schemes for scientific domains, subdomains, research types, ...
+
+Poisot, T., Bruneau, A., Gonzalez, A., Gravel, D., Peres-Neto, P., 2019. Ecological Data Should Not Be So Hard to Find and Reuse. Trends in Ecology & Evolution 0. https://doi.org/10.1016/j.tree.2019.04.005
 
 ---
+class: inverse
 
-# Hello Ninja
-
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
-
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+<img src="https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg" style="width: 100%" />
 
 ---
+class: inverse
 
-# remark.js
+# Entering Metadata
 
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
+<img src="https://cdn.gobankingrates.com/wp-content/uploads/2017/09/0-main-filing-taxes-romanr-shutterstock_583001296-848x477.jpg" style="width: 100%" />
 
 ---
-background-image: url(`r xaringan:::karl`)
-background-size: cover
-class: center, bottom, inverse
+class: inverse
 
-# I was so happy to have discovered remark.js!
+# Data Format
+
+--
+
+- machine readable
+
+- human readable
+
+--
+
+- XML
+
+--
+
+<img src="http://museums.ucdavis.edu/documentation/BohartDocumentTalk_files/image012.jpg" style="width: 100%" />
 
 ---
-class: inverse, middle, center
+class: inverse
 
-# Using xaringan
+# Introducing: R package dmdScheme
+
+--
+
+Entering Metadata in spreadsheet
+
+--
+
+<img src="./fig/emeScheme_Experiment.png" style="width: 100%" />
 
 ---
+class: inverse
+# Introducing: R package dmdScheme
+Entering Metadata in spreadsheet
 
-# xaringan
+<img src="./fig/emeScheme_Species.png" style="width: 100%" />
 
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
-
-```yaml
 ---
-title: "A Cool Presentation"
-output:
-  xaringan::moon_reader:
-    yolo: true
-    nature:
-      autoplay: 30000
----
+class: inverse
+
+# Introducing: R package dmdScheme
+
+--
+
+Validate Spreadsheet
+
+--
+
+```{r eval=FALSE}
+validate_report("SPREADSHEET.xlsx")
 ```
 
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
+--
+
+<img src="./fig/dmdScheme_validation.png" style="width: 100%" />
 
 ---
+class: inverse
 
-# remark.js vs xaringan
-
-Some differences between using remark.js (left) and using **xaringan** (right):
-
-.pull-left[
-1. Start with a boilerplate HTML file;
-
-1. Plain Markdown;
-
-1. Write JavaScript to autoplay slides;
-
-1. Manually configure MathJax;
-
-1. Highlight code with `*`;
-
-1. Edit Markdown source and refresh browser to see updated slides;
-]
-
-.pull-right[
-1. Start with an R Markdown document;
-
-1. R Markdown (can embed R/other code chunks);
-
-1. Provide an option `autoplay`;
-
-1. MathJax just works;<sup>*</sup>
-
-1. Highlight code with `{{}}`;
-
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
-]
-
-.footnote[[*] Not really. See next page.]
-
----
-
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
-
+# Introducing: R package dmdScheme
+Validate Spreadsheet
+```{r eval=FALSE}
+validate_report("SPREADSHEET.xlsx")
 ```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+<img src="./fig/dmdScheme_validation_details.png" style="width: 100%" />
 
 ---
+class: inverse
 
-# R Code
+# Introducing: R package dmdScheme
 
-```{r comment='#'}
-# a boring regression
-fit = lm(dist ~ 1 + speed, data = cars)
-coef(summary(fit))
-dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
-grep('天', dojutsu, value = TRUE)
-```
+--
 
----
+Export Spreadsheet to xml
 
-# R Plots
+--
 
-```{r cars, fig.height=4}
-par(mar = c(4, 4, 1, .1))
-plot(cars, pch = 19, col = 'darkgray', las = 1)
-abline(fit, lwd = 2)
-```
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{r}
-knitr::kable(head(iris), format = 'html')
-```
-
----
-
-# HTML Widgets
-
-I have not thoroughly tested HTML widgets against **xaringan**. Some may work well, and some may not. It is a little tricky.
-
-Similarly, the Shiny mode (`runtime: shiny`) does not work. I might get these issues fixed in the future, but these are not of high priority to me. I never turn my presentation into a Shiny app. When I need to demonstrate more complicated examples, I just launch them separately. It is convenient to share slides with other people when they are plain HTML/JS applications.
-
-See the next page for two HTML widgets.
-
----
-
-```{r out.width='100%', fig.height=6, eval=require('leaflet')}
-library(leaflet)
-leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17)
-```
-
----
-
-```{r eval=require('DT'), tidy=FALSE}
-DT::datatable(
-  head(iris, 10),
-  fillContainer = FALSE, options = list(pageLength = 8)
+```{r eval=FALSE}
+dmdScheme_to_xml( 
+   read_from_excel("SPREADSHEET.xlsx"), 
+   file = "metadata.xml" 
 )
 ```
 
----
-
-# Some Tips
-
-- When you use the "Infinite Moon Reader" addin in RStudio, your R session will be blocked by default. You can click the red button on the right of the console to stop serving the slides, or use the _daemonized_ mode so that it does not block your R session. To do the latter, you can set the option
-
-    ```r
-    options(servr.daemon = TRUE)
-    ```
-
-    in your current R session, or in `~/.Rprofile` so that it is applied to all future R sessions. I do the latter by myself.
-
-    To know more about the web server, see the [**servr**](https://github.com/yihui/servr) package.
-
 --
 
-- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        yolo: true
-    ```
+<img src="./fig/dmdScheme_xml.png" style="width: 100%" />
 
 ---
+class: center, middle, inverse 
 
-# Some Tips
-
-- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk:
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          autoplay: 30000
-    ```
-
---
-
-- A countdown timer can be added to every page of the slides using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          countdown: 60000
-    ```
-
-    Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
+<img src="https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg" style="width: 100%" />
 
 ---
-
-# Some Tips
-
-- The title slide is created automatically by **xaringan**, but it is just another remark.js slide added before your other slides.
-
-    The title slide is set to `class: center, middle, inverse, title-slide` by default. You can change the classes applied to the title slide with the `titleSlideClass` option of `nature` (`title-slide` is always applied).
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          titleSlideClass: [top, left, inverse]
-    ```
-
---
-
-- If you'd like to create your own title slide, disable **xaringan**'s title slide with the `seal = FALSE` option of `moon_reader`.
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        seal: false
-    ```
-
----
-
-# Some Tips
-
-- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.name/xaringan/incremental.html) for examples.
-
-- The option `highlightLines: true` of `nature` will highlight code lines that start with `*`, or are wrapped in `{{ }}`, or have trailing comments `#<<`;
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          highlightLines: true
-    ```
-
-    See examples on the next page.
-
----
-
-# Some Tips
-
-
-.pull-left[
-An example using a leading `*`:
-
-    ```r
-    if (TRUE) {
-    ** message("Very important!")
-    }
-    ```
-Output:
-```r
-if (TRUE) {
-* message("Very important!")
-}
-```
-
-This is invalid R code, so it is a plain fenced code block that is not executed.
-]
-
-.pull-right[
-An example using `{{}}`:
-
-````
-`r ''````{r tidy=FALSE}
-if (TRUE) {
-*{{ message("Very important!") }}
-}
-```
-````
-Output:
-```{r tidy=FALSE}
-if (TRUE) {
-{{ message("Very important!") }}
-}
-```
-
-It is valid R code so you can run it. Note that `{{}}` can wrap an R expression of multiple lines.
-]
-
----
-
-# Some Tips
-
-An example of using the trailing comment `#<<` to highlight lines:
-
-````markdown
-`r ''````{r tidy=FALSE}
-library(ggplot2)
-ggplot(mtcars) +
-  aes(mpg, disp) +
-  geom_point() +   #<<
-  geom_smooth()    #<<
-```
-````
-
-Output:
-
-```{r tidy=FALSE, eval=FALSE}
-library(ggplot2)
-ggplot(mtcars) +
-  aes(mpg, disp) +
-  geom_point() +   #<<
-  geom_smooth()    #<<
-```
-
----
-
-# Some Tips
-
-When you enable line-highlighting, you can also use the chunk option `highlight.output` to highlight specific lines of the text output from a code chunk. For example, `highlight.output = TRUE` means highlighting all lines, and `highlight.output = c(1, 3)` means highlighting the first and third line.
-
-````md
-`r ''````{r, highlight.output=c(1, 3)}
-head(iris)
-```
-````
-
-```{r, highlight.output=c(1, 3), echo=FALSE}
-head(iris)
-```
-
-Question: what does `highlight.output = c(TRUE, FALSE)` mean? (Hint: think about R's recycling of vectors)
-
----
-
-# Some Tips
-
-- To make slides work offline, you need to download a copy of remark.js in advance, because **xaringan** uses the online version by default (see the help page `?xaringan::moon_reader`).
-
-- You can use `xaringan::summon_remark()` to download the latest or a specified version of remark.js. By default, it is downloaded to `libs/remark-latest.min.js`.
-
-- Then change the `chakra` option in YAML to point to this file, e.g.
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        chakra: libs/remark-latest.min.js
-    ```
-
-- If you used Google fonts in slides (the default theme uses _Yanone Kaffeesatz_, _Droid Serif_, and _Source Code Pro_), they won't work offline unless you download or install them locally. The Heroku app [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/fonts) can help you download fonts and generate the necessary CSS.
-
----
-
-# Macros
-
-- remark.js [allows users to define custom macros](https://github.com/yihui/xaringan/issues/80) (JS functions) that can be applied to Markdown text using the syntax `![:macroName arg1, arg2, ...]` or `![:macroName arg1, arg2, ...](this)`. For example, before remark.js initializes the slides, you can define a macro named `scale`:
-
-    ```js
-    remark.macros.scale = function (percentage) {
-      var url = this;
-      return '<img src="' + url + '" style="width: ' + percentage + '" />';
-    };
-    ```
-
-    Then the Markdown text
-
-    ```markdown
-    ![:scale 50%](image.jpg)
-    ```
-
-    will be translated to
-
-    ```html
-    <img src="image.jpg" style="width: 50%" />
-    ```
-
----
-
-# Macros (continued)
-
-- To insert macros in **xaringan** slides, you can use the option `beforeInit` under the option `nature`, e.g.,
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          beforeInit: "macros.js"
-    ```
-
-    You save your remark.js macros in the file `macros.js`.
-
-- The `beforeInit` option can be used to insert arbitrary JS code before `remark.create()`. Inserting macros is just one of its possible applications.
-
----
-
-# CSS
-
-Among all options in `xaringan::moon_reader`, the most challenging but perhaps also the most rewarding one is `css`, because it allows you to customize the appearance of your slides using any CSS rules or hacks you know.
-
-You can see the default CSS file [here](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/default.css). You can completely replace it with your own CSS files, or define new rules to override the default. See the help page `?xaringan::moon_reader` for more information.
-
----
-
-# CSS
-
-For example, suppose you want to change the font for code from the default "Source Code Pro" to "Ubuntu Mono". You can create a CSS file named, say, `ubuntu-mono.css`:
-
-```css
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-```
-
-Then set the `css` option in the YAML metadata:
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: ["default", "ubuntu-mono.css"]
-```
-
-Here I assume `ubuntu-mono.css` is under the same directory as your Rmd.
-
-See [yihui/xaringan#83](https://github.com/yihui/xaringan/issues/83) for an example of using the [Fira Code](https://github.com/tonsky/FiraCode) font, which supports ligatures in program code.
-
----
-
-# Themes
-
-Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
-
-```{r}
-names(xaringan:::list_css())
-```
-
----
-
-# Themes
-
-To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
-```
-
-If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.name/en/2017/10/xaringan-themes).
-
----
-class: inverse, middle, center
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
-background-size: contain
-
-# Naruto
-
----
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-background-size: 100px
-background-position: 90% 8%
-
-# Sharingan
-
-The R package name **xaringan** was derived<sup>1</sup> from **Sharingan**, a dōjutsu in the Japanese anime _Naruto_ with two abilities:
-
-- the "Eye of Insight"
-
-- the "Eye of Hypnotism"
-
-I think a presentation is basically a way to communicate insights to the audience, and a great presentation may even "hypnotize" the audience.<sup>2,3</sup>
-
-.footnote[
-[1] In Chinese, the pronounciation of _X_ is _Sh_ /ʃ/ (as in _shrimp_). Now you should have a better idea of how to pronounce my last name _Xie_.
-
-[2] By comparison, bad presentations only put the audience to sleep.
-
-[3] Personally I find that setting background images for slides is a killer feature of remark.js. It is an effective way to bring visual impact into your presentations.
-]
-
----
-
-# Naruto terminology
-
-The **xaringan** package borrowed a few terms from Naruto, such as
-
-- [Sharingan](http://naruto.wikia.com/wiki/Sharingan) (写輪眼; the package name)
-
-- The [moon reader](http://naruto.wikia.com/wiki/Moon_Reader) (月読; an attractive R Markdown output format)
-
-- [Chakra](http://naruto.wikia.com/wiki/Chakra) (查克拉; the path to the remark.js library, which is the power to drive the presentation)
-
-- [Nature transformation](http://naruto.wikia.com/wiki/Nature_Transformation) (性質変化; transform the chakra by setting different options)
-
-- The [infinite moon reader](http://naruto.wikia.com/wiki/Infinite_Tsukuyomi) (無限月読; start a local web server to continuously serve your slides)
-
-- The [summoning technique](http://naruto.wikia.com/wiki/Summoning_Technique) (download remark.js from the web)
-
-You can click the links to know more about them if you want. The jutsu "Moon Reader" may seem a little evil, but that does not mean your slides are evil.
-
----
-
-class: center
-
-# Hand seals (印)
-
-Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
-
-![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
-
----
-
 class: center, middle
 
-# Thanks!
+<img src="https://xkcd.com/927/  https://imgs.xkcd.com/comics/standards.png" style="width: 100%" />
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+---
+class: inverse
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+# Competing or Not?
+
+--
+
+- Not!
+- dmdSchemes are subsets of other schemes ([Darwin Core](http://rs.tdwg.org/dwc/), [Ecological Metadata Language ](https://knb.ecoinformatics.org/external/emlparser/docs/eml-2.1.1/index.html))
+
+--
+# Ontologies
+- You don't want to go there right now! Promise!
+
+--
+# Simply linking Metadata Properties
+
+---
