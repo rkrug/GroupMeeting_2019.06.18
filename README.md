@@ -4,7 +4,7 @@ Author: Rainer M. Krug
 
 -----
 
-[![DOI]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3246326.svg)](https://doi.org/10.5281/zenodo.3246326)
 
 -----
 
